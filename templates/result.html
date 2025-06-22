@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Q&A</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('/static/RESULTT.png') no-repeat center center fixed;
+            background-size: cover;
+            padding: 40px;
+        }
+        .top-marquee {
+            width: 100%;
+            background-color: #1a73e8;
+            padding: 10px 0;
+          }
+      
+          .top-marquee h1 {
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+          }
+
+        h2 {
+            color: #020202;
+            text-align: center;
+        }
+
+        p {
+            background: #eef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-marquee">
+        <marquee scrollamount="15" direction="left">
+          <h1> Automatic Question Generation from Textbook Or Any Text using NLP </h1>
+        </marquee>
+      </div>
+    
+    <h2>Input Paragraph</h2>
+    <p>{{ paragraph }}</p>
+
+    <h2>Generated Questions and Answers</h2>
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        {% for q, a in qa_pairs %}
+        <tr>
+            <td>{{ q }}</td>
+            <td>{{ a }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">← Go Back</a>
+</body>
+</html>
